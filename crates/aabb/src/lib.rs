@@ -129,10 +129,10 @@ where
 
     /// Does `self` intersect with `other`?
     pub fn intersects(&self, other: &Aabb<T, U>) -> bool {
-        self.max.x > other.min.x
-            && self.min.x < other.max.x
-            && self.max.y > other.min.y
-            && self.min.y < other.max.y
+        self.max.x >= other.min.x
+            && self.min.x <= other.max.x
+            && self.max.y >= other.min.y
+            && self.min.y <= other.max.y
     }
 }
 
